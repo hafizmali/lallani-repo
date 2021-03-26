@@ -1,0 +1,14 @@
+[23-Sep-2018 20:17:50 UTC] PHP Fatal error:  Class 'WP_REST_Controller' not found in /home/lalanii/public_html/lalanii/portfolio/wp-content/plugins/visual-portfolio/classes/class-rest.php on line 15
+[23-Sep-2018 20:17:53 UTC] PHP Fatal error:  Class 'WP_REST_Controller' not found in /home/lalanii/public_html/lalanii/portfolio/wp-content/plugins/visual-portfolio/classes/class-rest.php on line 15
+[23-Sep-2018 20:17:53 UTC] PHP Fatal error:  Class 'WP_REST_Controller' not found in /home/lalanii/public_html/lalanii/portfolio/wp-content/plugins/visual-portfolio/classes/class-rest.php on line 15
+[24-Sep-2018 23:39:43 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/lalanii/public_html/lalanii/portfolio/wp-includes/class-wp-image-editor.php on line 425
+[24-Sep-2018 23:40:40 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/lalanii/public_html/lalanii/portfolio/wp-includes/class-wp-image-editor.php on line 425
+[25-Sep-2018 01:29:17 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/lalanii/public_html/lalanii/portfolio/wp-includes/class-wp-image-editor.php on line 425
+[25-Sep-2018 02:57:02 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/lalanii/public_html/lalanii/portfolio/wp-includes/class-wp-image-editor.php on line 425
+[25-Sep-2018 04:45:30 UTC] PHP Warning:  Illegal string offset 'id' in /home/lalanii/public_html/lalanii/portfolio/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/logoslider.php on line 544
+[25-Sep-2018 04:45:30 UTC] PHP Warning:  array_merge(): Argument #2 is not an array in /home/lalanii/public_html/lalanii/portfolio/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/logoslider.php on line 449
+[25-Sep-2018 04:45:30 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/lalanii/public_html/lalanii/portfolio/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/logoslider.php on line 450
+[25-Sep-2018 04:45:30 UTC] PHP Warning:  Illegal string offset 'id' in /home/lalanii/public_html/lalanii/portfolio/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/logoslider.php on line 544
+[25-Sep-2018 04:45:30 UTC] PHP Warning:  array_merge(): Argument #2 is not an array in /home/lalanii/public_html/lalanii/portfolio/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/logoslider.php on line 449
+[25-Sep-2018 04:45:30 UTC] PHP Warning:  extract() expects parameter 1 to be array, null given in /home/lalanii/public_html/lalanii/portfolio/wp-content/themes/enfold/config-templatebuilder/avia-shortcodes/logoslider.php on line 450
+[04-Apr-2019 18:45:59 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/lalanii/public_html/lalanii/portfolio/wp-includes/class-wp-image-editor.php on line 425

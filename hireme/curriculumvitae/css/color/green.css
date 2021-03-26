@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* Green Color #2ecb70 RGB(46, 203, 112) |  Dark Color #09c257  RGB(9, 194, 87)*/
+.green .intro {
+	background-color: #2ecb70;
+}
+.green .logo span{
+	border-color: #2ecb70;
+}
+.green .menu a:hover{
+	color: #2ecb70;
+}
+.green ::selection {
+	background-color: #2ecb70;
+	color: #fff;
+}
+.green #nav .current a{
+	color: #2ecb70 !important;
+}
+.green .spacer{
+	background: rgba(46, 203, 112, 0.5);
+}
+.green .title-two, .green .title-full-two{
+	color: #2ecb70;
+}
+.green .half-content a{
+	color: #2ecb70;
+}
+.green .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #2ecb70;
+}
+.green .p-two{
+	background-color: #2ecb70;
+}
+.green .sl-ico{
+	background-color: #2ecb70;
+}
+.green .folio-btn:hover{
+	background: #2ecb70;
+	color: #fff;
+}
+.green .ch-grid {
+	background-color: #2ecb70;
+}
+.green .f-title-two{
+	color: #2ecb70;
+}
+.green #sendMessage {
+	background: #2ecb70;
+}
+.green #sendMessage:hover, .green .load-color  {
+	background: #09c257 !important
+}
+.green #contactForm #senderName:focus, 
+.green #contactForm #senderEmail:focus, 
+.green #contactForm #message:focus {
+	border: 1px solid #2ecb70;
+}
+.green .s-media span:hover{
+	color: #2ecb70;
+	border-color: #2ecb70;
+}
+.green .scrollup {
+	background: #2ecb70;
+}
+.green .progress-bar .skill-in {
+  background-color: #2ecb70;
+}
+.green .car-prev-2, .green .car-next-2{
+	background-color: #2ecb70;
+}
+.green .selected{
+	border: 2px solid #09c257 !important; 
+	background: #2ecb70 !important;
+}
+.green .controller ul li:hover{
+	border: 2px solid #2ecb70; 
+	background: #2ecb70;
+}
+.green .classic-blog .post .date {
+    border: 1px solid #2ecb70;
+    color: #2ecb70;
+}
+.green .classic-blog .posts .format-wrapper {
+    background-color: #2ecb70;
+}
+.green .classic-blog .post a.date:hover {
+    background-color: #2ecb70;
+}
+.green .pagination ul > li > a,
+.pagination ul > li > span {
+    background: #2ecb70;
+}
+.green .pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    background: #09c257;
+}
+.green .car-prev, .green .car-next{
+	background-color: #2ecb70;
+}
+.green .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #2ecb70; 
+	background: #2ecb70;
+}
+.green #sendMessage:hover, .load-color  {
+	background: #09c257 !important;
+}
+.green .my-button{
+	background: #2ecb70;
+}
+.green .my-button a{
+	color: #f7f7f7;
+}
+.green .my-button a:hover{
+	color: #fff;
+}
+.green .my-button:hover{
+	background: #09c257;
+}
+.green a:hover,
+.green a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.green #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(9, 194, 87, 100);
+}

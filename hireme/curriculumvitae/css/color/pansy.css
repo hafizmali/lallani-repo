@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* pansy Color #9b58b6 RGB(155, 88, 182)|  Dark Color #893ba9 RGB(137, 59, 169) */
+.pansy .intro {
+	background-color: #9b58b6;
+}
+.pansy .logo span{
+	border-color: #9b58b6;
+}
+.pansy .menu a:hover{
+	color: #9b58b6;
+}
+.pansy ::selection {
+	background-color: #9b58b6;
+	color: #fff;
+}
+.pansy #nav .current a{
+	color: #9b58b6 !important;
+}
+.pansy .spacer{
+	background: rgba(155, 88, 182, 0.5);
+}
+.pansy .title-two, .pansy .title-full-two{
+	color: #9b58b6;
+}
+.pansy .half-content a{
+	color: #9b58b6;
+}
+.pansy .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #9b58b6;
+}
+.pansy .p-two{
+	background-color: #9b58b6;
+}
+.pansy .sl-ico{
+	background-color: #9b58b6;
+}
+.pansy .folio-btn:hover{
+	background: #9b58b6;
+	color: #fff;
+}
+.pansy .ch-grid {
+	background-color: #9b58b6;
+}
+.pansy .f-title-two{
+	color: #9b58b6;
+}
+.pansy #sendMessage {
+	background: #9b58b6;
+}
+.pansy #sendMessage:hover, .pansy .load-color  {
+	background: #9b58b6 !important
+}
+.pansy #contactForm #senderName:focus, 
+.pansy #contactForm #senderEmail:focus, 
+.pansy #contactForm #message:focus {
+	border: 1px solid #9b58b6;
+}
+.pansy .s-media span:hover{
+	color: #9b58b6;
+	border-color: #9b58b6;
+}
+.pansy .scrollup {
+	background: #9b58b6;
+}
+.pansy .progress-bar .skill-in {
+  background-color: #9b58b6;
+}
+.pansy .car-prev-2, .pansy .car-next-2{
+	background-color: #9b58b6;
+}
+.pansy .selected{
+	border: 2px solid #893ba9 !important; 
+	background: #9b58b6 !important;
+}
+.pansy .controller ul li:hover{
+	border: 2px solid #9b58b6; 
+	background: #9b58b6;
+}
+.pansy .classic-blog .post .date {
+    border: 1px solid #9b58b6;
+    color: #9b58b6;
+}
+.pansy .classic-blog .posts .format-wrapper {
+    background-color: #9b58b6;
+}
+.pansy .classic-blog .post a.date:hover {
+    background-color: #9b58b6;
+}
+.pansy .pagination ul > li > a,
+.pansy .pagination ul > li > span {
+    background: #9b58b6;
+}
+.pansy .pagination ul > li > a:hover,
+.pansy .pagination ul > li > a:focus,
+.pansy .pagination ul > .active > a,
+.pansy .pagination ul > .active > span {
+    background: #893ba9;
+}
+.pansy .car-prev, .pansy .car-next{
+	background-color: #9b58b6;
+}
+.pansy .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #9b58b6; 
+	background: #9b58b6;
+}
+.pansy #sendMessage:hover, .load-color  {
+	background: #893ba9 !important;
+}
+.pansy .my-button{
+	background: #9b58b6;
+}
+.pansy .my-button a{
+	color: #f7f7f7;
+}
+.pansy .my-button a:hover{
+	color: #fff;
+}
+.pansy .my-button:hover{
+	background: #893ba9;
+}
+.pansy a:hover,
+.pansy a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.pansy #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(137, 59, 169, 100);
+}

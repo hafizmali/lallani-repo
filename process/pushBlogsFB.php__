@@ -1,0 +1,84 @@
+<?php
+// require Facebook PHP SDK
+// see: https://developers.facebook.com/docs/php/gettingstarted/
+session_start();
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookAuthorizationException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookCanvasLoginHelper.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookClientException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookJavaScriptLoginHelper.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookOtherException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookPageTabHelper.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookPermissionException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookPermissions.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookRedirectLoginHelper.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookRequest.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookRequestException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookResponse.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookSDKException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookServerException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookSession.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookSignedRequestFromInputHelper.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/FacebookThrottleException.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphAlbum.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphLocation.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphObject.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphPage.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphSessionInfo.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphUser.php' );
+require_once( '../facebook-php-sdk-v4-4.0-dev/src/Facebook/GraphUserPage.php' );
+
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookAuthorizationException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookCanvasLoginHelper.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookClientException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookJavaScriptLoginHelper.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookOtherException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookPageTabHelper.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookPermissionException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookPermissions.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookRedirectLoginHelper.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookRequest.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookRequestException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookResponse.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookSDKException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookServerException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookSession.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookSignedRequestFromInputHelper.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\FacebookThrottleException.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphAlbum.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphLocation.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphObject.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphPage.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphSessionInfo.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphUser.php;
+use ..\facebook-php-sdk-v4-4.0-dev\src\Facebook\GraphUserPage.php;
+
+// initialize Facebook class using your own Facebook App credentials
+// see: https://developers.facebook.com/docs/php/gettingstarted/#install
+$config = array();
+$config['appId'] = '1640595062841641';
+$config['secret'] = '099f3be87a21d0e84c2ded0f53af42ce';
+$config['fileUpload'] = false; // optional
+ 
+$fb = new Facebook($config);
+ 
+// define your POST parameters (replace with your own values)
+$params = array(
+  "access_token" => "CAACEdEose0cBAAbW4QZBl0fTF1dsPlxcOQpJ8MVf0SugMZB589h7DJ57pGoYhR4ZAkz9afcv0LY8ZAsEeGpiawCZA2jO6YLggviDIWKMNwCv4KVd2sZBxgFqwC5XkWkQcGBuZCZC3JIRQAJdxQi5hclW38TLhbtnNpjprVTft0vYhQ59x7ZCrBJkm0X4QMDJthr7RO0ko0Lo0xiwmJCzpeaqTZAGh99mZCb9xIZD", // see: https://developers.facebook.com/docs/facebook-login/access-tokens/
+// https://developers.facebook.com/tools/explorer
+  "message" => "bored",
+  "link" => "http://creativewritingagency.com/",
+  "picture" => "http://i.imgur.com/lHkOsiH.png",
+  "name" => "http://creativewritingagency.com/wp-content/uploads/2015/04/Temp-Website-LOGO2.png",
+  "caption" => "http://creativewritingagency.com/",
+  "description" => "Creative. A Writing Agency."
+);
+ 
+// post to Facebook
+// see: https://developers.facebook.com/docs/reference/php/facebook-api/
+try {
+  $ret = $fb->api('/lalanii/feed', 'POST', $params);
+  echo 'Successfully posted to Facebook';
+} catch(Exception $e) {
+  echo $e->getMessage();
+}
+?>

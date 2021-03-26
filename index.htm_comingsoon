@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class="cufon-active cufon-ready"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Lalanii Rochelle</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link href="tools/style.css" rel="stylesheet" type="text/css">
+<link href="styles/comingsoon.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<script type="text/javascript" src="js/cufon-yui.js"></script><style type="text/css">cufon{text-indent:0!important;}@media screen,projection{cufon{display:inline!important;display:inline-block!important;position:relative!important;vertical-align:middle!important;font-size:1px!important;line-height:1px!important;}cufon cufontext{display:-moz-inline-box!important;display:inline-block!important;width:0!important;height:0!important;overflow:hidden!important;text-indent:-10000in!important;}cufon canvas{position:relative!important;}}@media print{cufon{padding:0!important;}cufon canvas{display:none!important;}}</style>
+<script type="text/javascript" src="js/Clarendon_LT_Std_700.font.js"></script>
+<script type="text/javascript">
+	Cufon.replace('h1,h3', {fontFamily: 'Clarendon LT Std', hover:true})
+</script>
+</head>
+<body>
+<div id="shim"></div>
+<div id="content">
+	<div class="logo_box"><h1>LALANII ROCHELLE</h1></div>          
+	<div class="main_box">
+		<h2>Our new website is coming soon.<br><span>In the meantime connect with 
+		us with the information below</span></h2>
+		
+		<ul class="info">
+			<li>
+				<h3><cufon class="cufon cufon-canvas" alt="P" style="width: 18px; height: 24px;"><canvas width="26" height="24" style="width: 26px; height: 24px; top: -2px; left: -1px;"></canvas><cufontext>
+				P</cufontext></cufon></h3>
+				<p>424-209-2549<br></p>
+			</li>
+			<li>
+				<h3><cufon class="cufon cufon-canvas" alt="P" style="width: 18px; height: 24px;"><canvas width="26" height="24" style="width: 26px; height: 24px; top: -2px; left: -1px;"></canvas><cufontext>
+				P</cufontext></cufon></h3>
+				<p><a href="mailto:lalanii@lalanii.com">lalanii@lalanii.com</a></p>
+			</li>
+			<li>
+				<h3><cufon class="cufon cufon-canvas" alt="S" style="width: 16px; height: 24px;"><canvas width="26" height="24" style="width: 26px; height: 24px; top: -2px; left: -1px;"></canvas><cufontext>
+				S</cufontext></cufon></h3>
+				<p class="social">
+					
+	<a href="http://www.yelp.com/user_details?userid=3RUJ2GJCz2v9gfkehyXFaQ" target="_blank" id="yelp">yelp</a>
+	<a href="http://weheartit.com/lalanii" target="_blank" id="weheartit">we heart it</a>
+	<a href="https://twitter.com/lalanii" target="_blank" id="twitter">twitter</a>
+	<a href="http://instagram.com/lalaniirochelle/" target="_blank" id="instagram">instagram</a>
+	<a href="https://www.pinterest.com/lalanii/" target="_blank" id="pinterest">pinterest</a><br>
+	<a href="https://www.facebook.com/pages/Author-Lalanii-R-Grant/106764956090989?ref=hl" target="_blank" id="facebook">facebook</a>
+	<a href="https://www.goodreads.com/user/show/3577224-lalanii" target="_blank" id="goodreads">goodreads</a>
+	<a href="http://fashionpoetrylalanii.com" target="_blank" id="tumblr">tumblr</a>
+	<a href="https://plus.google.com/u/0/+LalaniiRGrant/posts" target="_blank" id="google">google+</a>
+	<a href="https://www.linkedin.com/in/lalaniigrant" target="_blank" id="linkedin">linkedin</a>
+
+				</p>
+			
+		</ul>
+	</div>
+</div>
+
+
+
+</body></html>

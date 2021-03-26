@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* melonred Color #fb6c66 RGB(251, 108, 102)|  Dark Color #fa524b RGB(250, 82, 75) */
+.melonred .intro {
+	background-color: #fb6c66;
+}
+.melonred .logo span{
+	border-color: #fb6c66;
+}
+.melonred .menu a:hover{
+	color: #fb6c66;
+}
+.melonred ::selection {
+	background-color: #fb6c66;
+	color: #fff;
+}
+.melonred #nav .current a{
+	color: #fb6c66 !important;
+}
+.melonred .spacer{
+	background: rgba(251, 108, 102, 0.5);
+}
+.melonred .title-two, .melonred .title-full-two{
+	color: #fb6c66;
+}
+.melonred .half-content a{
+	color: #fb6c66;
+}
+.melonred .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #fb6c66;
+}
+.melonred .p-two{
+	background-color: #fb6c66;
+}
+.melonred .sl-ico{
+	background-color: #fb6c66;
+}
+.melonred .folio-btn:hover{
+	background: #fb6c66;
+	color: #fff;
+}
+.melonred .ch-grid {
+	background-color: #fb6c66;
+}
+.melonred .f-title-two{
+	color: #fb6c66;
+}
+.melonred #sendMessage {
+	background: #fb6c66;
+}
+.melonred #sendMessage:hover, .melonred .load-color  {
+	background: #fb6c66 !important
+}
+.melonred #contactForm #senderName:focus, 
+.melonred #contactForm #senderEmail:focus, 
+.melonred #contactForm #message:focus {
+	border: 1px solid #fb6c66;
+}
+.melonred .s-media span:hover{
+	color: #fb6c66;
+	border-color: #fb6c66;
+}
+.melonred .scrollup {
+	background: #fb6c66;
+}
+.melonred .progress-bar .skill-in {
+  background-color: #fb6c66;
+}
+.melonred .car-prev-2, .melonred .car-next-2{
+	background-color: #fb6c66;
+}
+.melonred .selected{
+	border: 2px solid #fa524b !important; 
+	background: #fb6c66 !important;
+}
+.melonred .controller ul li:hover{
+	border: 2px solid #fb6c66; 
+	background: #fb6c66;
+}
+.melonred .classic-blog .post .date {
+    border: 1px solid #fb6c66;
+    color: #fb6c66;
+}
+.melonred .classic-blog .posts .format-wrapper {
+    background-color: #fb6c66;
+}
+.melonred .classic-blog .post a.date:hover {
+    background-color: #fb6c66;
+}
+.melonred .pagination ul > li > a,
+.melonred .pagination ul > li > span {
+    background: #fb6c66;
+}
+.melonred .pagination ul > li > a:hover,
+.melonred .pagination ul > li > a:focus,
+.melonred .pagination ul > .active > a,
+.melonred .pagination ul > .active > span {
+    background: #fa524b;
+}
+.melonred .car-prev, .melonred .car-next{
+	background-color: #fb6c66;
+}
+.melonred .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #fb6c66; 
+	background: #fb6c66;
+}
+.melonred #sendMessage:hover, .load-color  {
+	background: #fa524b !important;
+}
+.melonred .my-button{
+	background: #fb6c66;
+}
+.melonred .my-button a{
+	color: #f7f7f7;
+}
+.melonred .my-button a:hover{
+	color: #fff;
+}
+.melonred .my-button:hover{
+	background: #fa524b;
+}
+.melonred a:hover,
+.melonred a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.melonred #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(250, 82, 75, 100);
+}

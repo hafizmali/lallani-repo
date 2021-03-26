@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* turquise Color #1abc9c RGB(26, 188, 156) |  Dark Color #00b08b RGB(0, 176, 139)*/
+.turquise .intro {
+	background-color: #1abc9c;
+}
+.turquise .logo span{
+	border-color: #1abc9c;
+}
+.turquise .menu a:hover{
+	color: #1abc9c;
+}
+.turquise ::selection {
+	background-color: #1abc9c;
+	color: #fff;
+}
+.turquise #nav .current a{
+	color: #1abc9c !important;
+}
+.turquise .spacer{
+	background: rgba(26, 188, 156, 0.5);
+}
+.turquise .title-two, .turquise .title-full-two{
+	color: #1abc9c;
+}
+.turquise .half-content a{
+	color: #1abc9c;
+}
+.turquise .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #1abc9c;
+}
+.turquise .p-two{
+	background-color: #1abc9c;
+}
+.turquise .sl-ico{
+	background-color: #1abc9c;
+}
+.turquise .folio-btn:hover{
+	background: #1abc9c;
+	color: #fff;
+}
+.turquise .ch-grid {
+	background-color: #1abc9c;
+}
+.turquise .f-title-two{
+	color: #1abc9c;
+}
+.turquise #sendMessage {
+	background: #1abc9c;
+}
+.turquise #sendMessage:hover, .turquise .load-color  {
+	background: #00b08b !important
+}
+.turquise #contactForm #senderName:focus, 
+.turquise #contactForm #senderEmail:focus, 
+.turquise #contactForm #message:focus {
+	border: 1px solid #1abc9c;
+}
+.turquise .s-media span:hover{
+	color: #1abc9c;
+	border-color: #1abc9c;
+}
+.turquise .scrollup {
+	background: #1abc9c;
+}
+.turquise .progress-bar .skill-in {
+  background-color: #1abc9c;
+}
+.turquise .car-prev-2, .turquise .car-next-2{
+	background-color: #1abc9c;
+}
+.turquise .selected{
+	border: 2px solid #00b08b !important; 
+	background: #1abc9c !important;
+}
+.turquise .controller ul li:hover{
+	border: 2px solid #1abc9c; 
+	background: #1abc9c;
+}
+.turquise .classic-blog .post .date {
+    border: 1px solid #1abc9c;
+    color: #1abc9c;
+}
+.turquise .classic-blog .posts .format-wrapper {
+    background-color: #1abc9c;
+}
+.turquise .classic-blog .post a.date:hover {
+    background-color: #1abc9c;
+}
+.turquise .pagination ul > li > a,
+.pagination ul > li > span {
+    background: #1abc9c;
+}
+.turquise .pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    background: #00b08b;
+}
+.turquise .car-prev, .turquise .car-next{
+	background-color: #1abc9c;
+}
+.turquise .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #1abc9c; 
+	background: #1abc9c;
+}
+.turquise #sendMessage:hover, .load-color  {
+	background: #00b08b !important;
+}
+.turquise .my-button{
+	background: #1abc9c;
+}
+.turquise .my-button a{
+	color: #f7f7f7;
+}
+.turquise .my-button a:hover{
+	color: #fff;
+}
+.turquise .my-button:hover{
+	background: #00b08b;
+}
+.turquise a:hover,
+.turquise a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.turquise #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(0, 176, 139, 100);
+}

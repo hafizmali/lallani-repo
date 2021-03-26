@@ -1,0 +1,1 @@
+[07-Apr-2020 02:01:33 America/Los_Angeles] PHP Fatal error:  Call to undefined function add_action() in /home/lalanii/public_html/lalanii/portfolio/wp-content/plugins/hello.php on line 60

@@ -1,0 +1,2 @@
+[10-Dec-2019 14:40:20 America/Los_Angeles] PHP Notice:  Undefined index: wp_version in /home/lalanii/public_html/lalanii/shop/wp-content/themes/twentyseventeen/functions.php on line 15
+[10-Dec-2019 14:40:20 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_template_directory() in /home/lalanii/public_html/lalanii/shop/wp-content/themes/twentyseventeen/functions.php on line 16

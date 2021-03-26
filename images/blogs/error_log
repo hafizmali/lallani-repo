@@ -1,0 +1,2 @@
+[13-Feb-2021 22:29:21 America/Los_Angeles] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lalanii/public_html/lalanii/includes/database.php on line 13
+[13-Feb-2021 22:31:05 America/Los_Angeles] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/lalanii/public_html/lalanii/includes/database.php on line 13

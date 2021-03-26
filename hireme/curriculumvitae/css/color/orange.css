@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* orange Color #e67e21 RGB(230, 126, 33)|  Dark Color #e26700 RGB(226, 103, 0) */
+.orange .intro {
+	background-color: #e67e21;
+}
+.orange .logo span{
+	border-color: #e67e21;
+}
+.orange .menu a:hover{
+	color: #e67e21;
+}
+.orange ::selection {
+	background-color: #e67e21;
+	color: #fff;
+}
+.orange #nav .current a{
+	color: #e67e21 !important;
+}
+.orange .spacer{
+	background: rgba(230, 126, 33, 0.5);
+}
+.orange .title-two, .orange .title-full-two{
+	color: #e67e21;
+}
+.orange .half-content a{
+	color: #e67e21;
+}
+.orange .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #e67e21;
+}
+.orange .p-two{
+	background-color: #e67e21;
+}
+.orange .sl-ico{
+	background-color: #e67e21;
+}
+.orange .folio-btn:hover{
+	background: #e67e21;
+	color: #fff;
+}
+.orange .ch-grid {
+	background-color: #e67e21;
+}
+.orange .f-title-two{
+	color: #e67e21;
+}
+.orange #sendMessage {
+	background: #e67e21;
+}
+.orange #sendMessage:hover, .orange .load-color  {
+	background: #e67e21 !important
+}
+.orange #contactForm #senderName:focus, 
+.orange #contactForm #senderEmail:focus, 
+.orange #contactForm #message:focus {
+	border: 1px solid #e67e21;
+}
+.orange .s-media span:hover{
+	color: #e67e21;
+	border-color: #e67e21;
+}
+.orange .scrollup {
+	background: #e67e21;
+}
+.orange .progress-bar .skill-in {
+  background-color: #e67e21;
+}
+.orange .car-prev-2, .orange .car-next-2{
+	background-color: #e67e21;
+}
+.orange .selected{
+	border: 2px solid #e26700 !important; 
+	background: #e67e21 !important;
+}
+.orange .controller ul li:hover{
+	border: 2px solid #e67e21; 
+	background: #e67e21;
+}
+.orange .classic-blog .post .date {
+    border: 1px solid #e67e21;
+    color: #e67e21;
+}
+.orange .classic-blog .posts .format-wrapper {
+    background-color: #e67e21;
+}
+.orange .classic-blog .post a.date:hover {
+    background-color: #e67e21;
+}
+.orange .pagination ul > li > a,
+.orange .pagination ul > li > span {
+    background: #e67e21;
+}
+.orange .pagination ul > li > a:hover,
+.orange .pagination ul > li > a:focus,
+.orange .pagination ul > .active > a,
+.orange .pagination ul > .active > span {
+    background: #e26700;
+}
+.orange .car-prev, .orange .car-next{
+	background-color: #e67e21;
+}
+.orange .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #e67e21; 
+	background: #e67e21;
+}
+.orange #sendMessage:hover, .load-color  {
+	background: #e26700 !important;
+}
+.orange .my-button{
+	background: #e67e21;
+}
+.orange .my-button a{
+	color: #f7f7f7;
+}
+.orange .my-button a:hover{
+	color: #fff;
+}
+.orange .my-button:hover{
+	background: #e26700;
+}
+.orange a:hover,
+.orange a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.orange #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(226, 103, 0, 100);
+}

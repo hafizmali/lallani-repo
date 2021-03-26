@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* indigo dye Color #34485e RGB(52, 72, 94)|  Dark Color #102842 RGB(16, 40, 66) */
+.indigodye .intro {
+	background-color: #34485e;
+}
+.indigodye .logo span{
+	border-color: #34485e;
+}
+.indigodye .menu a:hover{
+	color: #34485e;
+}
+.indigodye ::selection {
+	background-color: #34485e;
+	color: #fff;
+}
+.indigodye #nav .current a{
+	color: #34485e !important;
+}
+.indigodye .spacer{
+	background: rgba(52, 72, 94, 0.5);
+}
+.indigodye .title-two, .indigodye .title-full-two{
+	color: #34485e;
+}
+.indigodye .half-content a{
+	color: #34485e;
+}
+.indigodye .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #34485e;
+}
+.indigodye .p-two{
+	background-color: #34485e;
+}
+.indigodye .sl-ico{
+	background-color: #34485e;
+}
+.indigodye .folio-btn:hover{
+	background: #34485e;
+	color: #fff;
+}
+.indigodye .ch-grid {
+	background-color: #34485e;
+}
+.indigodye .f-title-two{
+	color: #34485e;
+}
+.indigodye #sendMessage {
+	background: #34485e;
+}
+.indigodye #sendMessage:hover, .indigodye .load-color  {
+	background: #34485e !important
+}
+.indigodye #contactForm #senderName:focus, 
+.indigodye #contactForm #senderEmail:focus, 
+.indigodye #contactForm #message:focus {
+	border: 1px solid #34485e;
+}
+.indigodye .s-media span:hover{
+	color: #34485e;
+	border-color: #34485e;
+}
+.indigodye .scrollup {
+	background: #34485e;
+}
+.indigodye .progress-bar .skill-in {
+  background-color: #34485e;
+}
+.indigodye .car-prev-2, .indigodye .car-next-2{
+	background-color: #34485e;
+}
+.indigodye .selected{
+	border: 2px solid #102842 !important; 
+	background: #34485e !important;
+}
+.indigodye .controller ul li:hover{
+	border: 2px solid #34485e; 
+	background: #34485e;
+}
+.indigodye .classic-blog .post .date {
+    border: 1px solid #34485e;
+    color: #34485e;
+}
+.indigodye .classic-blog .posts .format-wrapper {
+    background-color: #34485e;
+}
+.indigodye .classic-blog .post a.date:hover {
+    background-color: #34485e;
+}
+.indigodye .pagination ul > li > a,
+.indigodye .pagination ul > li > span {
+    background: #34485e;
+}
+.indigodye .pagination ul > li > a:hover,
+.indigodye .pagination ul > li > a:focus,
+.indigodye .pagination ul > .active > a,
+.indigodye .pagination ul > .active > span {
+    background: #102842;
+}
+.indigodye .car-prev, .indigodye .car-next{
+	background-color: #34485e;
+}
+.indigodye .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #34485e; 
+	background: #34485e;
+}
+.indigodye #sendMessage:hover, .load-color  {
+	background: #102842 !important;
+}
+.indigodye .my-button{
+	background: #34485e;
+}
+.indigodye .my-button a{
+	color: #f7f7f7;
+}
+.indigodye .my-button a:hover{
+	color: #fff;
+}
+.indigodye .my-button:hover{
+	background: #102842;
+}
+.indigodye a:hover,
+.indigodye a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.indigodye #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(16, 40, 66, 100);
+}

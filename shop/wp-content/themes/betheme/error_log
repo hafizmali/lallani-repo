@@ -1,0 +1,1 @@
+[10-Dec-2019 15:01:03 America/Los_Angeles] PHP Fatal error:  Call to undefined function get_template_directory() in /home/lalanii/public_html/lalanii/shop/wp-content/themes/betheme/functions.php on line 11

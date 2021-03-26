@@ -1,0 +1,74 @@
+<?php
+// require Facebook PHP SDK
+// see: https://developers.facebook.com/docs/php/gettingstarted/
+require_once("../lalanii/facebook-php-sdk-v4-5.0-dev/src/Facebook/autoload.php");
+
+
+$fb = new Facebook\Facebook([
+  'app_id' => '1640595062841641',
+  'app_secret' => '13d44b14d162cce2abef51be70f726fa',
+  'default_graph_version' => 'v2.3',
+  ]);
+ 
+$fb->setDefaultAccessToken('CAAXUHM3w4SkBAGwMpoLOrzRCVq6qUdAh4IAAP4yoSFTofhqn9wTFZBqNanoXYwLg5mEoT1hEP0WZAAZB6ZCiUDHqbY3ReLbLM47YoSOV6NQ8eKhuUYfqnZBCIZCx4N6WuuWfAZCyZAkaVxdMvDfHgUNt7uZA2qrqwkGpgy7ux2W7QN7B6HhBIz5dTiHSOKwRBeZBjLLExZCcZCdm6BpCB1s01lAM');
+
+include 'includes/database.php';
+
+$recentTime = strtotime('-15 minutes');
+$recentdate =date('Y-m-d H:i:s', $recentTime);
+
+$sqlSB="Select b.blogID,b.blogTitle,b.blogDetail,b.blogPage,b.blogDate,b.blogEmailed,b.blogThumb,b.blogBanner,s.categoryID,s.subcategoryID from llBlog b join llSubcategory s on b.subcategoryID=s.subcategoryID where b.post_to_fb ='1' and b.blogDate < NOW() and b.blogDate > '".$recentdate."'";
+
+$resultSB=mysql_query($sqlSB);
+$countSB=0;
+if ($resultSB) {
+//echo "<br>counter: ".$countSB;
+//echo "<br>total number: ".$numSB;
+while(mysql_fetch_array($resultSB)) {
+
+$blogID = mysql_result($resultSB,$countSB,"blogID");
+echo $blogTitle = mysql_result($resultSB,$countSB,"blogTitle");
+$blogPage = mysql_result($resultSB,$countSB,"blogPage");
+$blogDetail = mysql_result($resultSB,$countSB,"blogDetail");
+$blogDetailPart=substr(strip_tags($blogDetail),0,100)."...";
+$categoryID = mysql_result($resultSB,$countSB,"categoryID");
+$subcategoryID = mysql_result($resultSB,$countSB,"subcategoryID");
+$banner = mysql_result($resultSB,$countSB,"blogBanner");
+$thumb = mysql_result($resultSB,$countSB,"blogThumb");
+
+
+$blogTitle;
+$blogDetail;
+$blogDetail = strip_tags(stripcslashes($blogDetailPart));
+
+
+
+$fbanner = explode('com/',$banner);
+
+//}
+
+$data = [
+	'link' => 'http://lalanii.com/'.strtolower($blogPage)."/".$blogID."/".preg_replace('/[^A-Za-z0-9\-]/', '',  str_replace(' ','-',  $blogTitle)),	
+	'message' => $blogTitle.'    '.'http://lalanii.com/'.strtolower($blogPage)."/".$blogID."/".preg_replace('/[^A-Za-z0-9\-]/', '',  str_replace(' ','-',  $blogTitle)),
+	
+  	'source' => $fb->fileToUpload($fbanner[1]),
+];
+
+
+try {
+  $response = $fb->post('/me/photos', $data, 'CAAXUHM3w4SkBAKa5ZAf52idUkNFPjNTRSpW8zwefSBoxWkOZACGwZAYTeR2zyTzYhO4p7t8NtfBra54NUwyhSUAwm24PpwcsOZAJjwNJqNRuffeQJyLZCbHKNtVdi616epcMHze3t189VfXSbK3KP5VuSSillwzaI5MSvYJRFOWqCDIteRcMduPdfybiZCZBmwZD');
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
+
+
+$graphNode = $response->getGraphNode();
+} }
+
+echo 'Done';
+//echo 'Posted with id: ' . $graphNode['id'];
+?>

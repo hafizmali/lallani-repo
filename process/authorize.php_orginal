@@ -1,0 +1,363 @@
+<?php
+include ("../includes/startsession.php");
+include ("../includes/database.php");
+include ("../includes/authnetdata.php");
+include ("../includes/authnetfunction.php");
+
+$userID=$_POST['userID'];
+$subscription=$_POST['subscription'];
+
+if ((strtoupper($subscription))=="MONTHLY"){
+	$monthly="ON";
+}elseif ((strtoupper($subscription))=="YEARLY"){
+	$yearly="ON";
+}elseif ((strtoupper($subscription))=="LIFETIME"){
+	$lifetime="ON";
+}
+
+$card_num=$_POST['card_num'];
+$card_code=$_POST['card_code'];
+$first_name=$_POST['first_name'];
+$last_name=$_POST['last_name'];
+$address=$_POST['address'];
+$city=$_POST['city'];
+$state=$_POST['state'];
+$zip=$_POST['zip'];
+$country=$_POST['country'];
+$refId=1; // update to a unique number built off timestamp or some shit
+$startdate= date('Y-m-d', strtotime("+1 week"));
+
+
+/* echo "<br>userID: ".$userID;
+echo "<br>monthly: ".$monthly;
+echo "<br>yearly: ".$yearly;
+echo "<br>lifetime: ".$lifetime;
+echo "<br>card_num: ".$card_num;
+echo "<br>card_code: ".$card_code;
+echo "<br>first_name: ".$first_name;
+echo "<br>last_name: ".$last_name;
+echo "<br>address: ".$address;
+echo "<br>city: ".$city;
+echo "<br>state: ".$state;
+echo "<br>zip: ".$zip;
+echo "<br>country: ".$country;
+ */
+$exp_month=$_POST['exp_month'];
+$exp_year=$_POST['exp_year'];
+$exp_date = $exp_year."-".$exp_month;
+$amount="0.00";
+
+if (strtoupper($monthly)=='ON'){$amount="4.99";$description="Lalanii.com Monthly Subscription";$intervalunit="months";$intervalLength=1;}
+if (strtoupper($yearly)=='ON'){$amount="40.00";$description="Lalanii.com Annual Subscription";$intervalunit="days";$intervalLength=365;}
+if (strtoupper($lifetime)=='ON'){
+	$amount="100.00";
+	$description="Lalanii.com Lifetime Access";
+// By default, this sample code is designed to post to our test server for
+// developer accounts: https://test.authorize.net/gateway/transact.dll
+// for real accounts (even in test mode), please make sure that you are
+// posting to: https://secure.authorize.net/gateway/transact.dll
+
+
+
+
+
+
+$post_url = "https://test.authorize.net/gateway/transact.dll";
+
+$post_values = array(
+	
+	// the API Login ID and Transaction Key must be replaced with valid values
+
+	"x_login"				=> $login,
+	"x_tran_key"			=> $trankey,
+
+	"x_version"				=> "3.1",
+	"x_delim_data"			=> "TRUE",
+	"x_delim_char"			=> "|",
+	"x_relay_response"		=> "FALSE",
+
+	"x_type"				=> "AUTH_CAPTURE",
+	"x_method"				=> "CC",
+	//"x_recurring_billing"	=> $recurring_billing, //TRUE or FALSE
+	"x_card_num"			=> $card_num,
+	"x_exp_date"			=> $exp_date,
+	"x_card_code"			=> $card_code,
+
+	"x_amount"				=> $amount,
+	"x_description"			=> $description,
+
+	"x_first_name"			=> $first_name,
+	"x_last_name"			=> $last_name,
+	"x_address"				=> $address,
+	"x_state"				=> $state,
+	"x_zip"					=> $zip,
+	"x_test_request"		=> "TRUE"
+	// Additional fields can be added here as outlined in the AIM integration
+	// guide at: http://developer.authorize.net
+);
+
+// This section takes the input fields and converts them to the proper format
+// for an http post.  For example: "x_login=username&x_tran_key=a1B2c3D4"
+$post_string = "";
+foreach( $post_values as $key => $value )
+	{ $post_string .= "$key=" . urlencode( $value ) . "&"; }
+$post_string = rtrim( $post_string, "& " );
+
+// The following section provides an example of how to add line item details to
+// the post string.  Because line items may consist of multiple values with the
+// same key/name, they cannot be simply added into the above array.
+//
+// This section is commented out by default.
+/*
+$line_items = array(
+	"item1<|>golf balls<|><|>2<|>18.95<|>Y",
+	"item2<|>golf bag<|>Wilson golf carry bag, red<|>1<|>39.99<|>Y",
+	"item3<|>book<|>Golf for Dummies<|>1<|>21.99<|>Y");
+	
+foreach( $line_items as $value )
+	{ $post_string .= "&x_line_item=" . urlencode( $value ); }
+*/
+
+// This sample code uses the CURL library for php to establish a connection,
+// submit the post, and record the response.
+// If you receive an error, you may want to ensure that you have the curl
+// library enabled in your php configuration
+$request = curl_init($post_url); // initiate curl object
+	curl_setopt($request, CURLOPT_HEADER, 0); // set to 0 to eliminate header info from response
+	curl_setopt($request, CURLOPT_RETURNTRANSFER, 1); // Returns response data instead of TRUE(1)
+	curl_setopt($request, CURLOPT_POSTFIELDS, $post_string); // use HTTP POST to send form data
+	curl_setopt($request, CURLOPT_SSL_VERIFYPEER, FALSE); // uncomment this line if you get no gateway response.
+	$post_response = curl_exec($request); // execute curl post and store results in $post_response
+	// additional options may be required depending upon your server configuration
+	// you can find documentation on curl options at http://www.php.net/curl_setopt
+curl_close ($request); // close curl object
+
+// This line takes the response and breaks it into an array using the specified delimiting character
+$response_array = explode($post_values["x_delim_char"],$post_response);
+
+// The results are output to the screen in the form of an html numbered list.
+
+/*
+echo "<OL>\n";
+foreach ($response_array as $value)
+{
+	echo "<LI>" . $value . "&nbsp;</LI>\n";
+}
+echo "</OL>\n";
+*/
+
+// individual elements of the array could be accessed to read certain response
+// fields.  For example, response_array[0] would return the Response Code,
+// response_array[2] would return the Response Reason Code.
+// for a list of response fields, please review the AIM Implementation Guide
+
+/* response_array[0] Response Code
+1 This transaction has been approved.
+2 This transaction has been declined.
+3 There has been an error processing this transaction.
+4 This transaction is being held for review.
+*/
+
+
+//end lifetime/one time
+} else {
+	// do recurring ARB here
+	
+
+/* 	define("AUTHORIZENET_API_LOGIN_ID", $login);
+	define("AUTHORIZENET_TRANSACTION_KEY", $trankey);
+	$subscription                          = new AuthorizeNet_Subscription;
+	$subscription->name                    = $description;
+	$subscription->intervalLength          = "1";
+	$subscription->intervalUnit            = $intervalunit;
+	$subscription->startDate               = date("Y-m-d H:i:s");
+	//$subscription->totalOccurrences        = "12";
+	$subscription->amount                  = $amount;
+	$subscription->creditCardCardNumber    = $card_num;
+	$subscription->creditCardExpirationDate= $exp_date;
+	$subscription->creditCardCardCode      = $card_code;
+	$subscription->billToFirstName         = $first_name;
+	$subscription->billToLastName          = $last_name;
+ */
+ 
+ 
+/****NOTE***
+Please download the PHP SDK available at https://developer.authorize.net/downloads/ for more current code.
+*/
+
+/*
+D I S C L A I M E R                                                                                          
+WARNING: ANY USE BY YOU OF THE SAMPLE CODE PROVIDED IS AT YOUR OWN RISK.                                                                                   
+Authorize.Net provides this code "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability and/or fitness for a particular purpose.   
+Authorize.Net owns and retains all right, title and interest in and to the Automated Recurring Billing intellectual property.
+*/
+
+
+//define variables to send
+/* $amount = $_POST["amount"];
+$refId = $_POST["refId"];
+$name = $_POST["name"];
+$length = $_POST["length"];
+$unit = $_POST["unit"];
+$startDate = $_POST["startDate"];
+$totalOccurrences = $_POST["totalOccurrences"];
+$trialOccurrences = $_POST["trialOccurrences"];
+$trialAmount = $_POST["trialAmount"];
+$cardNumber = $_POST["cardNumber"];
+$expirationDate = $_POST["expirationDate"];
+$firstName = $_POST["firstName"];
+$lastName = $_POST["lastName"];
+
+echo "Results <br><br>";
+ */
+//build xml to post
+$content='<?xml version="1.0" encoding="utf-8"?>';
+$content.='<ARBCreateSubscriptionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">';
+$content.='<merchantAuthentication>';
+$content.='<name>' . $login . '</name>';
+$content.='<transactionKey>' . $trankey . '</transactionKey>';
+$content.='</merchantAuthentication>';
+$content.='<refId>' . $refId . '</refId>';
+$content.='<subscription>';
+$content.='<name>' . $description . '</name>';
+/*COPIED PAYMENT SCHEDULE*/
+/*
+$content.='<paymentSchedule><interval><length>1</length><unit>months</unit></interval><startDate>2015-05-17</startDate><totalOccurrences>12</totalOccurrences><trialOccurrences>1</trialOccurrences></paymentSchedule>';
+*/
+
+$content.='<paymentSchedule>';
+$content.='<interval>';
+$content.='<length>'.$intervalLength.'</length>';
+$content.='<unit>'. $intervalunit .'</unit>';
+$content.='</interval>';
+$content.='<startDate>' . $startdate . '</startDate>';
+$content.='<totalOccurrences>999</totalOccurrences>';
+$content.='<trialOccurrences>1</trialOccurrences>';
+$content.='</paymentSchedule>';
+
+$content.='<amount>'. $amount .'</amount>';
+$content.='<trialAmount>0.00</trialAmount>';
+$content.='<payment>';
+$content.='<creditCard>';
+$content.='<cardNumber>' . $card_num . '</cardNumber>';
+$content.='<expirationDate>' . $exp_date . '</expirationDate>';
+$content.='</creditCard>';
+$content.='</payment>';
+$content.='<billTo>';
+$content.='<firstName>'. $first_name . '</firstName>';
+$content.='<lastName>' . $last_name . '</lastName>';
+$content.='</billTo>';
+$content.='</subscription>'; 
+$content.='</ARBCreateSubscriptionRequest>';
+
+/* echo "<br>the content: ".$content; */
+//send the xml via curl
+$response = send_request_via_curl($host,$path,$content);
+//if curl is unavilable you can try using fsockopen
+/*
+$response = send_request_via_fsockopen($host,$path,$content);
+*/
+
+
+//if the connection and send worked $response holds the return from Authorize.net
+if ($response)
+{
+		/*
+	a number of xml functions exist to parse xml results, but they may or may not be avilable on your system
+	please explore using SimpleXML in php 5 or xml parsing functions using the expat library
+	in php 4
+	parse_return is a function that shows how you can parse though the xml return if these other options are not avilable to you
+	*/
+	
+	
+	list ($refId, $resultCode, $code, $text, $subscriptionId) =parse_return($response);
+
+	
+	/* echo " Response Code: $resultCode <br>";
+	echo " Response Reason Code: $code<br>";
+	echo " Response Text: $text<br>";
+	echo " Reference Id: $refId<br>";
+	echo " Subscription Id: $subscriptionId <br><br>";
+	echo " Data has been written to data.log<br><br>";
+	echo $login;
+	echo "<br />";
+	echo $trankey;
+	echo "<br />";
+
+	echo "amount:";
+	echo $amount;
+	echo "<br \>";
+
+	echo "refId:";
+	echo $refId;
+	echo "<br \>";
+
+	echo "name:";
+	echo $description;
+	echo "<br \>";
+
+	echo "amount: ";
+	echo $HTTP_POST_VARS[amount];
+	echo "<br \>";
+	echo "<br \>";
+	echo $content;
+	echo "<br \>";
+	echo "<br \>";
+	 */
+$fp = fopen('data.log', "a");
+fwrite($fp, "$refId\r\n");
+fwrite($fp, "$subscriptionId\r\n");
+fwrite($fp, "$amount\r\n");
+fclose($fp);
+
+	
+}
+else
+{
+	//echo "Transaction Failed. <br>";
+}
+ 
+ 	
+	
+	
+//end recurring payment ARB
+}
+/* 
+echo "melissas data:<br>";
+echo "one time: ".$response_array[0]."<br>";
+echo "recurring: ".$resultCode."<br>";
+ */
+if ((strtoupper($lifetime))=='ON'){
+		$authResponse=$response_array[0];
+		$authReason=$response_array[1];
+		$authText=$response_array[2];
+	}else{
+		$authResponse=$resultCode;
+		$authReason=$code;
+		$authText=$text;
+	}
+$subscription="none";
+$accessThrough="0000-00-00";
+$today=date('Y-m-d H:i:s');
+//echo "<br>today: ".$today;
+if (($authResponse==1) AND ((strtoupper($lifetime))=="ON")){$accessThrough="9999-12-31";$subscription="lifetime";}
+if (((strtoupper($authResponse))=="OK") AND ((strtoupper($monthly))=="ON")){$accessThrough=date('Y-m-d H:i:s',strtotime("+1 month",strtotime($today)));$subscription="monthly";}
+if (((strtoupper($authResponse))=="OK") AND ((strtoupper($yearly))=="ON")){$accessThrough=date('Y-m-d H:i:s',strtotime("+1 year", strtotime($today)));$subscription="yearly";}
+//echo "<br>accessthrough: ".$accessThrough;
+$_SESSION['subscription']=$subscription;
+$_SESSION['responsecode']=$response_array[0].$resultCode;
+$sql="UPDATE llUser SET userType='super', accessThrough='$accessThrough',authResponse='$authResponse',subscription='$subscription',authText='$authText',authReason='$authReason' where userID=$userID";
+mysql_query($sql);
+/*
+echo "<br />".$sql;
+echo "<br />Record Updated";
+echo "<br />starting: ".$startdate;
+echo "<br />subscription session: ".$_SESSION['subscription'];
+echo "<br />responsecode: ".$_SESSION['responsecode'];
+*/
+/* $_SESSION['loggedin']="yes";
+$_SESSION['response']=$authResponse;
+$_SESSION['responsereason']=$authResponseReason;
+$_SESSION['userID']=$userID; */
+echo "<script type='text/javascript'>window.location.href='http://lalanii.com/message.php';</script>";
+?>

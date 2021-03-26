@@ -1,0 +1,196 @@
+<script>
+function commentmove(replyID)
+{
+	//alert(replyID);
+//$(".btn").click(function() {
+    $("#comsec"+replyID).append($("#formComments"));
+	$("#orgfrom").remove();
+	document.getElementById("pID").value = replyID;
+//});
+}
+</script>
+<style>
+.blogcomments ul li.subcomm {
+  margin-left: 20px;
+  width: 94.5% !important;
+}
+.blogcomments ul li.subsubcomm {
+  margin-left: 40px;
+  width: 92% !important;
+}
+.blogcomments ul li.subsubsubcomm {
+  margin-left: 60px;
+  width: 88.5% !important;
+}
+.blogcomments ul li { margin:5px 0px; }
+</style>
+<?php	
+	//echo "<br>SQL:".$sqlBLOG;
+	$resultBLOG=mysql_query($sqlBLOG);
+	$numBLOG=mysql_num_rows($resultBLOG);
+	if ($numBLOG>0){
+	//echo "<br>NumRows:".$numBLOG;
+		
+		$blogID=mysql_result($resultBLOG,$BLOG,"blogID");
+		$blogPage=strtolower(mysql_result($resultBLOG,$BLOG,"blogPage"));
+		$blogTitle=mysql_result($resultBLOG,$BLOG,"blogTitle");		
+		$blogDetail=mysql_result($resultBLOG,$BLOG,"blogDetail");
+		$subcategory=mysql_result($resultBLOG,$BLOG,"subcategoryID");
+		$authorID=mysql_result($resultBLOG,$BLOG,"authorID");
+		$stickyBlog=mysql_result($resultBLOG,$BLOG,"stickyBlog");
+		$secretBlog=mysql_result($resultBLOG,$BLOG,"secretBlog");
+		$blogBanner=mysql_result($resultBLOG,$BLOG,"blogBanner");
+		$banner_one=mysql_result($resultBLOG,$BLOG,"banner_one");
+		$banner_two=mysql_result($resultBLOG,$BLOG,"banner_two");
+		$blogThumb=mysql_result($resultBLOG,$BLOG,"blogThumb");
+		$blogDate=date("F j, Y",strtotime(mysql_result($resultBLOG,$BLOG,"blogDate")));
+		$blogAdded=date("m/d/Y",strtotime(mysql_result($resultBLOG,$BLOG,"blogAdded")));
+		$blogDetailPart=substr(strip_tags($blogDetail),0,88)."...";
+		
+		$sqlBLOGA="Select * from llUser where userID=".$authorID;
+		$resultBLOGA=mysql_query($sqlBLOGA);
+		$authorFirstName=mysql_result($resultBLOGA,0,"userFirstName");
+		$authorLastName=mysql_result($resultBLOGA,0,"userLastName");
+		
+		$sqlBLOGC="Select count(*) as commentCount from llComment where approved=1 and blogID=".$blogID;
+		$resultBLOGC=mysql_query($sqlBLOGC);
+		$commentCount=mysql_result($resultBLOGC,0,"commentCount");
+		
+		?>		
+		
+		<ul class="singleBlog">
+		<li class="blogtitle"><h3><?php echo $blogTitle; ?></h3></li>
+		<li class="blogtopics">			
+			<?php 	
+					$sqlBLOGTopFirst="Select * from llBlogTopic bt join llTopic t on bt.topicID=t.topicID where bt.blogID=".$blogID;
+					//echo "<br>num categories: ".$sqlBLOGTopFirst;
+					$resultBLOGTopFirst=mysql_query($sqlBLOGTopFirst);
+					if ($resultBLOGTopFirst){
+					$numBLOGTopFirst=mysql_num_rows($resultBLOGTopFirst);
+					//echo "<br>num topics: ".$numBLOGTopFirst;
+					$BLOGTopFirst=0;	
+					while ($BLOGTopFirst < $numBLOGTopFirst) {
+					$firstTopicID=mysql_result($resultBLOGTopFirst,$BLOGTopFirst,"topicID");
+					$firstTopic=mysql_result($resultBLOGTopFirst,$BLOGTopFirst,"topic");
+					echo "<a href='http://lalanii.com/blogs.php?tid=".$firstTopicID."'>";
+					echo $firstTopic;
+					echo "</a>";
+					++$BLOGTopFirst;
+					if ($BLOGTopFirst==$numBLOGTopFirst){echo "";}else{echo ",&nbsp;";}
+					}}
+					
+				?>			
+		</li>		
+		<li class="blogimage"><img class="blogBanner" src="<?php echo $blogBanner; ?>" width="790px" height="425px" /></li>
+		<li class="blogauthor">Posted by: <?php echo $authorFirstName; ?>, <?php echo $blogDate; ?></li>
+		<li class="blogdetail">
+			<?php 
+				$blogDetail= nl2br($blogDetail);			
+				echo $blogDetail.'<br /><a href="https://plus.google.com/u/1/101576019692239294931/posts/p/pub" id="abc" rel="author" style="clear:both;float:left;width:100%;" target="_blank">Lalanii on Google +</a>'; 
+				if ($isadmin=="yes"){?>
+				<a style="float:right;" href="javascript:window.open('http://lalanii.com/includes/blogmanager.php?blogID=<?php echo $blogID; ?>','blogmanager<?php echo $blogID; ?>','width=1044,height=700,top=100,left=100')">edit</a>
+				<?php } ?>
+		</li>
+        <li>&nbsp;</li>
+			<div style="font-weight:bold;text-align:left;clear:both;font-size:16px;"><span>Comments:</span> <?php echo $commentCount; ?></div>
+            <div id="orgfrom">
+		<form name="formComments" id="formComments" method="POST" action="process/addcomment.php">
+			
+					<textarea name="comment" class="clearText" cols="100" rows="3" id="addcomment" placeholder="add comment"></textarea>
+						<?php if ($loggedin=="yes"){?>
+						<a href="" onclick="document.formComments.submit();return false;" class="next">add</a>
+						<?php }else{ ?>
+						<a href="" class="loginClick next">add</a>
+						<?php } ?>
+					
+					<input type="hidden" value="<?php echo $file; ?>" name="file" />
+                    <input type="hidden" value="0" id="pID" name="pID" />
+					<input type="hidden" value="<?php echo $blogID; ?>" name="blogID" />
+				</form>
+                </div>
+				<script type="text/javascript">
+				function submitformComments(){
+					document.formComments.submit();
+					return false;
+					}
+				</script>
+		<li class="blogcomments">
+
+			<ul>
+				<?php
+				$sqlCOMM="select * from llComment c join llUser u on c.userID=u.userID where c.approved=1 and c.blogID='".$blogID."' and pID=0 order by c.commentDate desc";
+				$resultCOMM=mysql_query($sqlCOMM);
+				$numCOMM=mysql_num_rows($resultCOMM);
+				$COMM=0;
+				while($COMM<$numCOMM){	
+				$currId = mysql_result($resultCOMM,$COMM,"commentID");		
+				echo "<li>".mysql_result($resultCOMM,$COMM,"comment")."<br /><span>&nbsp;--comment by ".mysql_result($resultCOMM,$COMM,"userFirstName")." on ".substr( date('n/j/Y g:i A',strtotime(mysql_result($resultCOMM,$COMM,"commentDate"))),0,9)."</span>  <a onclick='commentmove(".$currId.")' id='replysec".$currId."' href='#".$currId."'>Reply</a><br /><br /><div id='comsec".$currId."'></div>";
+				echo "</li>";
+				
+				
+				
+					$sqlCOMM2="select * from llComment c join llUser u on c.userID=u.userID where c.approved=1 and c.blogID='".$blogID."' and pID='".$currId."' order by c.commentDate desc";
+					$resultCOMM2=mysql_query($sqlCOMM2);
+					$numCOMM2=mysql_num_rows($resultCOMM2);
+					$COMM2=0;
+					while($COMM2<$numCOMM2){	
+					$currId = mysql_result($resultCOMM2,$COMM2,"commentID");		
+					echo "<li class='subcomm'>".mysql_result($resultCOMM2,$COMM2,"comment")."<br /><span>&nbsp;--comment by ".mysql_result($resultCOMM2,$COMM2,"userFirstName")." on ".substr( date('n/j/Y g:i A',strtotime(mysql_result($resultCOMM2,$COMM2,"commentDate"))),0,9)."</span>  <a onclick='commentmove(".$currId.")' id='replysec".$currId."' href='#".$currId."'>Reply</a><br /><br /><div id='comsec".$currId."'></div></li>";
+					
+					
+						$sqlCOMM3="select * from llComment c join llUser u on c.userID=u.userID where c.approved=1 and c.blogID='".$blogID."' and pID='".$currId."' order by c.commentDate desc";
+						$resultCOMM3=mysql_query($sqlCOMM3);
+						$numCOMM3=mysql_num_rows($resultCOMM3);
+						$COMM3=0;
+						while($COMM3<$numCOMM3){	
+						$currId = mysql_result($resultCOMM3,$COMM3,"commentID");		
+						echo "<li class='subsubcomm'>".mysql_result($resultCOMM3,$COMM3,"comment")."<br /><span>&nbsp;--comment by ".mysql_result($resultCOMM3,$COMM3,"userFirstName")." on ".substr( date('n/j/Y g:i A',strtotime(mysql_result($resultCOMM3,$COMM3,"commentDate"))),0,9)."</span>  <a onclick='commentmove(".$currId.")' id='replysec".$currId."' href='#".$currId."'>Reply</a><br /><br /><div id='comsec".$currId."'></div></li>";
+						
+							$sqlCOMM4="select * from llComment c join llUser u on c.userID=u.userID where c.approved=1 and c.blogID='".$blogID."' and pID='".$currId."' order by c.commentDate desc";
+							$resultCOMM4=mysql_query($sqlCOMM4);
+							$numCOMM4=mysql_num_rows($resultCOMM4);
+							$COMM4=0;
+							while($COMM34<$numCOMM4){	
+							$currId = mysql_result($resultCOMM4,$COMM4,"commentID");		
+							echo "<li class='subsubsubcomm'>".mysql_result($resultCOMM4,$COMM4,"comment")."<br /><span>&nbsp;--comment by ".mysql_result($resultCOMM4,$COMM4,"userFirstName")." on ".substr( date('n/j/Y g:i A',strtotime(mysql_result($resultCOMM4,$COMM4,"commentDate"))),0,9)."</span></li>";
+							++$COMM4;
+							}
+						
+						++$COMM3;
+						}
+					
+					
+					++$COMM2;
+					}
+				
+				++$COMM;
+				}
+				?>	
+				
+				
+			</ul>
+		</li>
+	<li class="blogshare"><?php include "share.php";?></li>
+	</ul>
+    
+    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'lalaniis';
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    
+    
+<?php
+}else{
+	echo '<script>window.location="http://www.lalanii.com/error.php";</script>';
+}
+?>
+		

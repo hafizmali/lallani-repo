@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* purple Color #7558b6 RGB(117, 88, 182)|  Dark Color #5d3ba9 RGB(93, 59, 169) */
+.purple .intro {
+	background-color: #7558b6;
+}
+.purple .logo span{
+	border-color: #7558b6;
+}
+.purple .menu a:hover{
+	color: #7558b6;
+}
+.purple ::selection {
+	background-color: #7558b6;
+	color: #fff;
+}
+.purple #nav .current a{
+	color: #7558b6 !important;
+}
+.purple .spacer{
+	background: rgba(117, 88, 182, 0.5);
+}
+.purple .title-two, .purple .title-full-two{
+	color: #7558b6;
+}
+.purple .half-content a{
+	color: #7558b6;
+}
+.purple .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #7558b6;
+}
+.purple .p-two{
+	background-color: #7558b6;
+}
+.purple .sl-ico{
+	background-color: #7558b6;
+}
+.purple .folio-btn:hover{
+	background: #7558b6;
+	color: #fff;
+}
+.purple .ch-grid {
+	background-color: #7558b6;
+}
+.purple .f-title-two{
+	color: #7558b6;
+}
+.purple #sendMessage {
+	background: #7558b6;
+}
+.purple #sendMessage:hover, .purple .load-color  {
+	background: #7558b6 !important
+}
+.purple #contactForm #senderName:focus, 
+.purple #contactForm #senderEmail:focus, 
+.purple #contactForm #message:focus {
+	border: 1px solid #7558b6;
+}
+.purple .s-media span:hover{
+	color: #7558b6;
+	border-color: #7558b6;
+}
+.purple .scrollup {
+	background: #7558b6;
+}
+.purple .progress-bar .skill-in {
+  background-color: #7558b6;
+}
+.purple .car-prev-2, .purple .car-next-2{
+	background-color: #7558b6;
+}
+.purple .selected{
+	border: 2px solid #5d3ba9 !important; 
+	background: #7558b6 !important;
+}
+.purple .controller ul li:hover{
+	border: 2px solid #7558b6; 
+	background: #7558b6;
+}
+.purple .classic-blog .post .date {
+    border: 1px solid #7558b6;
+    color: #7558b6;
+}
+.purple .classic-blog .posts .format-wrapper {
+    background-color: #7558b6;
+}
+.purple .classic-blog .post a.date:hover {
+    background-color: #7558b6;
+}
+.purple .pagination ul > li > a,
+.purple .pagination ul > li > span {
+    background: #7558b6;
+}
+.purple .pagination ul > li > a:hover,
+.purple .pagination ul > li > a:focus,
+.purple .pagination ul > .active > a,
+.purple .pagination ul > .active > span {
+    background: #5d3ba9;
+}
+.purple .car-prev, .purple .car-next{
+	background-color: #7558b6;
+}
+.purple .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #7558b6; 
+	background: #7558b6;
+}
+.purple #sendMessage:hover, .load-color  {
+	background: #5d3ba9 !important;
+}
+.purple .my-button{
+	background: #7558b6;
+}
+.purple .my-button a{
+	color: #f7f7f7;
+}
+.purple .my-button a:hover{
+	color: #fff;
+}
+.purple .my-button:hover{
+	background: #5d3ba9;
+}
+.purple a:hover,
+.purple a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.purple #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(93, 59, 169, 100);
+}

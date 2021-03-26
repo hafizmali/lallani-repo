@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* pink Color #ed4f96 RGB(237, 79, 150)|  Dark Color #ea3084 RGB(234, 48, 132) */
+.pink .intro {
+	background-color: #ed4f96;
+}
+.pink .logo span{
+	border-color: #ed4f96;
+}
+.pink .menu a:hover{
+	color: #ed4f96;
+}
+.pink ::selection {
+	background-color: #ed4f96;
+	color: #fff;
+}
+.pink #nav .current a{
+	color: #ed4f96 !important;
+}
+.pink .spacer{
+	background: rgba(237, 79, 150, 0.5);
+}
+.pink .title-two, .pink .title-full-two{
+	color: #ed4f96;
+}
+.pink .half-content a{
+	color: #ed4f96;
+}
+.pink .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #ed4f96;
+}
+.pink .p-two{
+	background-color: #ed4f96;
+}
+.pink .sl-ico{
+	background-color: #ed4f96;
+}
+.pink .folio-btn:hover{
+	background: #ed4f96;
+	color: #fff;
+}
+.pink .ch-grid {
+	background-color: #ed4f96;
+}
+.pink .f-title-two{
+	color: #ed4f96;
+}
+.pink #sendMessage {
+	background: #ed4f96;
+}
+.pink #sendMessage:hover, .pink .load-color  {
+	background: #ed4f96 !important
+}
+.pink #contactForm #senderName:focus, 
+.pink #contactForm #senderEmail:focus, 
+.pink #contactForm #message:focus {
+	border: 1px solid #ed4f96;
+}
+.pink .s-media span:hover{
+	color: #ed4f96;
+	border-color: #ed4f96;
+}
+.pink .scrollup {
+	background: #ed4f96;
+}
+.pink .progress-bar .skill-in {
+  background-color: #ed4f96;
+}
+.pink .car-prev-2, .pink .car-next-2{
+	background-color: #ed4f96;
+}
+.pink .selected{
+	border: 2px solid #ea3084 !important; 
+	background: #ed4f96 !important;
+}
+.pink .controller ul li:hover{
+	border: 2px solid #ed4f96; 
+	background: #ed4f96;
+}
+.pink .classic-blog .post .date {
+    border: 1px solid #ed4f96;
+    color: #ed4f96;
+}
+.pink .classic-blog .posts .format-wrapper {
+    background-color: #ed4f96;
+}
+.pink .classic-blog .post a.date:hover {
+    background-color: #ed4f96;
+}
+.pink .pagination ul > li > a,
+.pink .pagination ul > li > span {
+    background: #ed4f96;
+}
+.pink .pagination ul > li > a:hover,
+.pink .pagination ul > li > a:focus,
+.pink .pagination ul > .active > a,
+.pink .pagination ul > .active > span {
+    background: #ea3084;
+}
+.pink .car-prev, .pink .car-next{
+	background-color: #ed4f96;
+}
+.pink .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #ed4f96; 
+	background: #ed4f96;
+}
+.pink #sendMessage:hover, .load-color  {
+	background: #ea3084 !important;
+}
+.pink .my-button{
+	background: #ed4f96;
+}
+.pink .my-button a{
+	color: #f7f7f7;
+}
+.pink .my-button a:hover{
+	color: #fff;
+}
+.pink .my-button:hover{
+	background: #ea3084;
+}
+.pink a:hover,
+.pink a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.pink #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(234, 48, 132, 100);
+}

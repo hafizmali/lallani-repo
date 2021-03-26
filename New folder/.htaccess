@@ -1,0 +1,56 @@
+<ifModule mod_gzip.c>
+mod_gzip_on Yes
+mod_gzip_dechunk Yes
+
+mod_gzip_item_include mime ^text/.*
+mod_gzip_item_include mime ^application/javascript
+mod_gzip_item_include mime ^application/xm.*
+mod_gzip_item_include mime ^image/svg.*
+mod_gzip_item_include mime ^application/(x-)?font-.*
+</ifModule>
+## EXPIRES CACHING ##
+<IfModule mod_expires.c>
+ExpiresActive On
+ExpiresByType image/jpg "access 1 year"
+ExpiresByType image/jpeg "access 1 year"
+ExpiresByType image/gif "access 1 year"
+ExpiresByType image/png "access 1 year"
+ExpiresByType text/css "access 1 month"
+ExpiresByType text/html "access 1 month"
+ExpiresByType application/pdf "access 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"  
+ExpiresByType application/javascript "access plus 1 month"  
+ExpiresByType application/x-javascript "access plus 1 month"
+ExpiresByType image/x-icon "access 1 year"
+ExpiresDefault "access 1 month"
+</IfModule>
+<FilesMatch "(?i)^.*\.(ico|flv|jpg|jpeg|png|gif|js|css|pdf)$"> 
+ExpiresActive On 
+ExpiresDefault A2592000 
+</FilesMatch> 
+## EXPIRES CACHING ##
+
+Redirect 301 //813/Lifestyle-Tarzan-Boat http://lalanii.com/creatives/813/Lifestyle-Tarzan-Boat
+Redirect 301 /Creatives/811/Creatives-Trainwreck- http://lalanii.com/creatives/811/Creatives-Trainwreck-
+
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule    ^beauty/([0-9]+)/([A-Za-z0-9-]+)?$    beauty.php?blogID=$1
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule    ^fashion/([0-9]+)/([A-Za-z0-9-]+)?$    fashion.php?blogID=$1
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule    ^creatives/([0-9]+)/([A-Za-z0-9-]+)?$    creatives.php?blogID=$1
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule    ^secrets/([0-9]+)/([A-Za-z0-9-]+)?$    secrets.php?blogID=$1
+
+#RewriteRule    ^beauty/?$    beauty.php
+#RewriteRule beauty(.*)$ beauty.php?id=$1 
+#RewriteRule ^beauty/([0-9]+)/([A-Za-z0-9-]+)/?$ beauty.php?blogID=701

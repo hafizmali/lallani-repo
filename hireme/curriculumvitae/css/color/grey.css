@@ -1,0 +1,131 @@
+@charset "UTF-8";
+/* Grey Color #95a5a7 RGB(149, 165, 167)|  Dark Color #788384 RGB(130, 149, 152)*/
+.grey .intro {
+	background-color: #95a5a7;
+}
+.grey .logo span{
+	border-color: #95a5a7;
+}
+.grey .menu a:hover{
+	color: #95a5a7;
+}
+.grey ::selection {
+	background-color: #95a5a7;
+	color: #fff;
+}
+.grey #nav .current a{
+	color: #95a5a7 !important;
+}
+.grey .spacer{
+	background: rgba(149, 165, 167, 0.5);
+}
+.grey .title-two, .grey .title-full-two{
+	color: #95a5a7;
+}
+.grey .half-content a{
+	color: #95a5a7;
+}
+.grey .fun-icon{ 
+	font-size: 60px;
+    -webkit-text-fill-color: rgba(225,225,225,0); /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #95a5a7;
+}
+.grey .p-two{
+	background-color: #95a5a7;
+}
+.grey .sl-ico{
+	background-color: #95a5a7;
+}
+.grey .folio-btn:hover{
+	background: #95a5a7;
+	color: #fff;
+}
+.grey .ch-grid {
+	background-color: #95a5a7;
+}
+.grey .f-title-two{
+	color: #95a5a7;
+}
+.grey #sendMessage {
+	background: #95a5a7;
+}
+.grey #sendMessage:hover, .grey .load-color  {
+	background: #95a5a7 !important
+}
+.grey #contactForm #senderName:focus, 
+.grey #contactForm #senderEmail:focus, 
+.grey #contactForm #message:focus {
+	border: 1px solid #95a5a7;
+}
+.grey .s-media span:hover{
+	color: #95a5a7;
+	border-color: #95a5a7;
+}
+.grey .scrollup {
+	background: #95a5a7;
+}
+.grey .progress-bar .skill-in {
+  background-color: #95a5a7;
+}
+.grey .car-prev-2, .grey .car-next-2{
+	background-color: #95a5a7;
+}
+.grey .selected{
+	border: 2px solid #788384 !important; 
+	background: #95a5a7 !important;
+}
+.grey .controller ul li:hover{
+	border: 2px solid #95a5a7; 
+	background: #95a5a7;
+}
+.grey .classic-blog .post .date {
+    border: 1px solid #95a5a7;
+    color: #95a5a7;
+}
+.grey .classic-blog .posts .format-wrapper {
+    background-color: #95a5a7;
+}
+.grey .classic-blog .post a.date:hover {
+    background-color: #95a5a7;
+}
+.grey .pagination ul > li > a,
+.pagination ul > li > span {
+    background: #95a5a7;
+}
+.grey .pagination ul > li > a:hover,
+.pagination ul > li > a:focus,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+    background: #788384;
+}
+.grey .car-prev, .grey .car-next{
+	background-color: #95a5a7;
+}
+.grey .controller-2 ul li:hover,.controller-3 ul li:hover{
+	border: 2px solid #95a5a7; 
+	background: #95a5a7;
+}
+.grey #sendMessage:hover, .load-color  {
+	background: #788384 !important;
+}
+.grey .my-button{
+	background: #95a5a7;
+}
+.grey .my-button a{
+	color: #f7f7f7;
+}
+.grey .my-button a:hover{
+	color: #fff;
+}
+.grey .my-button:hover{
+	background: #788384;
+}
+.grey a:hover,
+.grey a:focus {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+.grey #nav2 > a{
+	background:url("../../img/menu-icon-blk.png") no-repeat scroll 0 0 rgba(130, 149, 152, 100);
+}
